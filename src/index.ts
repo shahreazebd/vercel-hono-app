@@ -7,6 +7,6 @@ app.get("/", (c) => {
 });
 
 export default {
-  port: 8088,
+  port: 80,
   fetch: app.fetch,
 };

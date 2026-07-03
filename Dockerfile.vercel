@@ -10,7 +10,7 @@ RUN bun install --frozen-lockfile
 COPY . .
 
 # Expose the port configured in src/index.ts (8088)
-EXPOSE 8088
+EXPOSE 80
 
 # Run the application
 CMD ["bun", "run", "src/index.ts"]
