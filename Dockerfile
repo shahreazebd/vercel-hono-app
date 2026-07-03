@@ -1,0 +1,16 @@
+# Use the official Bun image
+FROM oven/bun:alpine AS base
+WORKDIR /usr/src/app
+
+# Install dependencies
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port configured in src/index.ts (8088)
+EXPOSE 8088
+
+# Run the application
+CMD ["bun", "run", "src/index.ts"]
